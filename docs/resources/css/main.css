@@ -2,7 +2,7 @@ body {
     margin: 0 0 0 0;
     height: 100%;
     background-color: whitesmoke;
-    font-size: 12pt;
+    font-size: 14pt;
 }
 
 hr {
@@ -70,8 +70,9 @@ a:hover {
 }
 
 .tippy-box {
-    background-color: rgba(237, 235, 230, .9);
+    background-color: rgba(237, 235, 230, .95);
     color: black;
+    font-size: 24px;
 }
 
 .tippy-arrow {

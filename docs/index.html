@@ -38,7 +38,7 @@
                 features to the composition of an embedding algorithm.
                 <section>
                     <h3>1a) Planar Graphs <a href="#ref1">[1: pg 12]</a> <a href="#ref3">[3: Section 9.1]</a></h3>
-                    &emsp; A <a class="planar">Planar Graph</a> is a graph $G$ which can be drawn on a plane without any crossing edges.
+                    &emsp; A <a class="planar">Planar Graph</a> is a graph $G$ which can be embedded (drawn) on a plane without any crossing edges.
                     By <a class="kurT">Kuratowski's Theorem</a>, it is known that a graph $G$ is planar <i>if and only if</i> it does not
                     contain any subgraphs that are a subdivision of <a class="k5">$K_5$</a> or <a class="k33">$K_{3,3}$</a>.
                     <br><br>
@@ -53,19 +53,50 @@
                     </figure>
                     <br>
                     &emsp; $G$ contains a subgraph which is isomorphic to a subdivision of <a class="k33">$K_{3,3}$</a> as illustrated above. Therefore,
-                    it can be concluded that $G$ is not a <a class="planar">Planar Graph</a>.
+                    it can be concluded that $G$ is not a <a class="planar">Planar Graph</a>. Note that many different possible subgraphs may exist,
+                    but only one needs to be found in order to disqualify $G$. This feature of <a class="k5">$K_5$</a> and
+                    <a class="k33">$K_{3,3}$</a> means that they can also be referred to as a "forbidden minor" in the context of a planar embedding.
                 </section>
                 <section>
-                    <h3>1b) Toroidal Graphs</h3>
-                    &emsp; While <a class="kurT">Kuratowski's Theorem</a> provides an elegant complete characterization of a <a class="planar">
-                    Planar Graph</a> which does not exist for a <a class="planar">Toroidal Graph</a>.
+                    <h3>1b) Toroidal Embeddings <a href="#ref3">[3: Section 10.2]</a></h3>
+                    &emsp; It is relatively easy to imagine drawing a graph on a plane, but a torus can be more difficult to conceptualize. See the figure below for an illustration:
+                    <figure style="margin: auto; width: calc(262px * 1);">
+                        <image src="resources/images/torus-forever.gif" style="width: 256px; border: 1px solid black;"></image>
+                        <figcaption><h3>Figure 2: Converting a Plane to a Torus</h3></figcaption>
+                    </figure>
+                    &emsp; Figure 2 shows the standard mapping from a Plane to a Torus; edges which reach one side of the plane, they must wrap around on the opposing side.
+                    This is remenescent of early Arcade games such as Pacman. While this manipulation does not preserve distances as shown by the warped size of the lines in Figure 2,
+                    it is a valid manipulation for our purposes as it preserves the properties of intersection and paralellism which characterize a graph embedding.
                 </section>
                 <section>
-                    <h3>1c) Embedding Algorithm Basics</h3>
+                    <h3>1c) Toroidal Graphs <a href="#ref2">[2: pg 1]</a></h3>
+                    &emsp; First, it is important to note the <a class="tor">toroidal graphs</a> are a superset of <a class="planar">planar graphs</a>: all graphs that are planar are also toroidal.
+                    <br><br>
+                    &emsp; While <a class="kurT">Kuratowski's Theorem</a> provides an elegant complete characterization of the <a class="planar">planar graphs
+                    </a>, no such characterization exists for a <a class="planar">Toroidal Graph</a>. In fact, at the time that reference <a href="#ref2">[2]</a> was written,
+                    there were 239,451 known distinct forbidden minors for toroidal embeddings (as opposed to the planar embedding's 2).
+                </section>
+                <section>
+                    <h3>1d) Embedding Algorithm Basics</h3>
                 </section>
             </section>
             <section>
                 <h2>2. Embedding Algorithms</h2>
+                <section>
+                    <h3>2a) Enumerative Bridge Embedding</h3>
+                </section>
+                <section>
+                    <h3>2b) Recursive Bridge Assignment</h3>
+                </section>
+                <section>
+                    <h3>2c) Recursive Bridge Attachment</h3>
+                </section>
+                <section>
+                    <h3>2d) Path Based Embedding Algorithm</h3>
+                </section>
+            </section>
+            <section>
+                <h2>3. Embedding Algorithms</h2>
                 <section>
                     <h3>2a) Enumerative Bridge Embedding</h3>
                 </section>
