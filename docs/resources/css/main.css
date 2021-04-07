@@ -1,13 +1,8 @@
-#bg {
-    width: 100%;
-    height: 100%;
-    background-color: whitesmoke;
-    padding: 16px;
-}
-
 body {
     margin: 0 0 0 0;
     height: 100%;
+    background-color: whitesmoke;
+    font-size: 12pt;
 }
 
 hr {
@@ -75,4 +70,22 @@ a, a:link, a:visited {
 a:hover {
     cursor: pointer;
     color: darkblue;
+}
+
+.tippy-box {
+    background-color: rgba(237, 235, 230, .9);
+    color: black;
+}
+
+.tippy-arrow {
+    color: rgba(180, 180, 170, 1);
+}
+
+.MathJax {
+    font-size: 10px;
+}
+
+figure figcaption {
+    border: 1px dotted blue;
+    text-align: center;
 }
