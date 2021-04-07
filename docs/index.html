@@ -26,58 +26,58 @@
         <link rel="stylesheet" href="resources/css/main.css">
     </head>
     <body onload="main()">
-        <div class="header">
-            <div class="header-item"> Gregory Croisdale <br> gcroisda  <br> gcroisda@vols.utk.edu </div>
-            <div class="header-item"> <h2>Toroidal Embedding Algorithms</h1> Math 499: Graph Theory Project 1 </div>
-            <div class="header-item"> <br> April 8, 2021 </div>
-        </div>
         <div class="content">
+            <div class="header">
+                <div class="header-item"> Gregory Croisdale <br> gcroisda  <br> gcroisda@vols.utk.edu </div>
+                <div class="header-item"> <h2>Toroidal Embedding Algorithms</h1> Math&nbsp;499: Graph&nbsp;Theory Project&nbsp;1 </div>
+                <div class="header-item"> <br> April 8, 2021 </div>
+            </div>
             <section>
                 <h2>1. Background</h2>
-                First, we will discuss the Planar and Toroidal embeddings of a graph in order to establish the vital
+                &emsp; First, we will discuss the Planar and Toroidal embeddings of a graph in order to establish the vital
                 features to the composition of an embedding algorithm.
                 <section>
-                    <h3>1a Planar Graphs <a href="#ref1">[1: pg 12]</a> <a href="#ref3">[3: Section 9.1]</a></h3>
+                    <h3>1a) Planar Graphs <a href="#ref1">[1: pg 12]</a> <a href="#ref3">[3: Section 9.1]</a></h3>
                     &emsp; A <a class="planar">Planar Graph</a> is a graph $G$ which can be drawn on a plane without any crossing edges.
                     By <a class="kurT">Kuratowski's Theorem</a>, it is known that a graph $G$ is planar <i>if and only if</i> it does not
                     contain any subgraphs that are a subdivision of <a class="k5">$K_5$</a> or <a class="k33">$K_{3,3}$</a>.
                     <br><br>
                     Take $G$ for example:
                     <br>
-                    <figure style="margin-left: calc(60% - 512px); width: calc(261px * 2);">
+                    <figure style="margin: auto; width: calc(262px * 2);">
                         <image src="resources/images/graphs/k33subo.svg" style="width: 256px; border: 1px solid black;"></image>
                         <image src="resources/images/graphs/k33sub.svg" style="width: 256px; border: 1px solid black;"></image>
 
                         <figcaption><h3>Figure 1: Non-Planar $G$ with Highlighted Subgraph</h3>
                         On the figure on the right, only the vertices which are part of the <a class="k33">$K_{3,3}$</a> subgraph are colored red.</figcaption>
                     </figure>
-
+                    <br>
+                    &emsp; $G$ contains a subgraph which is isomorphic to a subdivision of <a class="k33">$K_{3,3}$</a> as illustrated above. Therefore,
+                    it can be concluded that $G$ is not a <a class="planar">Planar Graph</a>.
                 </section>
                 <section>
-                    <h3>1b Toroidal Graphs</h3>
+                    <h3>1b) Toroidal Graphs</h3>
                     &emsp; While <a class="kurT">Kuratowski's Theorem</a> provides an elegant complete characterization of a <a class="planar">
                     Planar Graph</a> which does not exist for a <a class="planar">Toroidal Graph</a>.
                 </section>
                 <section>
-                    <h3>1c Embedding Algorithm Basics</h3>
+                    <h3>1c) Embedding Algorithm Basics</h3>
                 </section>
-                <button id="myButton">woot woot</button>
             </section>
             <section>
                 <h2>2. Embedding Algorithms</h2>
                 <section>
-                    <h3>2a Enumerative Bridge Embedding</h3>
+                    <h3>2a) Enumerative Bridge Embedding</h3>
                 </section>
                 <section>
-                    <h3>2b Recursive Bridge Assignment</h3>
+                    <h3>2b) Recursive Bridge Assignment</h3>
                 </section>
                 <section>
-                    <h3>2c Recursive Bridge Attachment</h3>
+                    <h3>2c) Recursive Bridge Attachment</h3>
                 </section>
                 <section>
-                    <h3>2d Path Based Embedding Algorithm</h3>
+                    <h3>2d) Path Based Embedding Algorithm</h3>
                 </section>
-                <button id="myButton">woot woot</button>
             </section>
             <section>
                 <h2>3. Demo</h2>

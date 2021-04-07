@@ -31,18 +31,19 @@ hr {
 }
 
 .header {
-    margin-top: 16px;
     display: grid;
-    grid-template-columns: auto auto auto;
-    margin-left: 10vw;
-    width: calc(80vw - 32px);
+    grid-template-columns: 33.3% 33.3% 33.3%;
     border-top: 4px solid black;
     border-bottom: 4px solid black;
 }
 
 .header-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
     padding: 20px;
-    font-size: 30px;
+    font-size: 24px;
     text-align: center;
 }
 
@@ -50,16 +51,12 @@ body {
     font-family: "Computer Modern", "CMU Serif", sans-serif;
 }
 
-.content::before {
-    background-color: red;
-    width: calc(80vw - 48px);
-    margin-left: calc(10vw + 8px);
-    display: block;
-}
-
 .content {
     width: calc(80vw - 48px);
     margin-left: calc(10vw + 8px);
+    margin-top: 16px;
+    background-color: rgba(255, 255, 255, .5);
+    padding: 24px;
 }
 
 a, a:link, a:visited {
@@ -86,6 +83,13 @@ a:hover {
 }
 
 figure figcaption {
-    border: 1px dotted blue;
     text-align: center;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 20px;
 }
