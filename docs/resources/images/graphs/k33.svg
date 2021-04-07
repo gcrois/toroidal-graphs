@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="40.821438mm"
+   height="45.828766mm"
+   viewBox="0 0 40.821438 45.828766"
+   version="1.1"
+   id="svg942"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="k33.svg">
+  <defs
+     id="defs936" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="69.325549"
+     inkscape:cy="165.79652"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1346"
+     inkscape:window-height="1198"
+     inkscape:window-x="3362"
+     inkscape:window-y="2466"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata939">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-42.358284,-32.411457)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 79.752975,55.562499 46.113094,36.852677 78.808036,74.46131"
+       id="path1617" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 46.113094,36.852677 33.261905,0.188989"
+       id="path1619" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 79.374999,37.041666 46.113094,55.562499 h 33.639881"
+       id="path1621" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 46.113094,55.562499 32.69494,18.898809"
+       id="path1623" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 46.302083,75.028273 79.374999,37.041666"
+       id="path1625" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 46.302083,75.028273 79.752975,55.562499"
+       id="path1627" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 46.302083,75.028273 78.808034,74.461308"
+       id="path1629" />
+    <circle
+       style="fill:#ff0000;fill-rule:evenodd;stroke-width:0.264583"
+       id="path10-9"
+       cx="79.305458"
+       cy="55.325836"
+       r="3.8742559" />
+    <circle
+       style="fill:#ff0000;fill-rule:evenodd;stroke-width:0.264583"
+       id="path10-5"
+       cx="79.305458"
+       cy="74.365967"
+       r="3.8742559" />
+    <circle
+       style="fill:#ff0000;fill-rule:evenodd;stroke-width:0.264583"
+       id="path10-9-0"
+       cx="79.305466"
+       cy="36.285713"
+       r="3.8742559" />
+    <circle
+       style="fill:#ff0000;fill-rule:evenodd;stroke-width:0.264583"
+       id="path10-9-4"
+       cx="46.23254"
+       cy="55.325836"
+       r="3.8742559" />
+    <circle
+       style="fill:#ff0000;fill-rule:evenodd;stroke-width:0.264583"
+       id="path10-5-6"
+       cx="46.23254"
+       cy="74.365967"
+       r="3.8742559" />
+    <circle
+       style="fill:#ff0000;fill-rule:evenodd;stroke-width:0.264583"
+       id="path10-9-0-8"
+       cx="46.232548"
+       cy="36.285713"
+       r="3.8742559" />
+  </g>
+</svg>
