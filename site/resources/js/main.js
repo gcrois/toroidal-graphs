@@ -1,5 +1,8 @@
 function main() {
     tippy('#myButton', {
-        content: "I'm a Tippy tooltip!",
-    });
+        content: "<image src=\"resources/images/torus-forever.gif\" style=\"width:256px;\">",
+        allowHTML: true,
+        placement: "bottom",
+    },
+    );
 }
