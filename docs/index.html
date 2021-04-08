@@ -28,7 +28,7 @@
     <body onload="main()">
         <div class="content">
             <div class="header">
-                <div class="header-item"> Gregory Croisdale <br> gcroisda  <br> gcroisda@vols.utk.edu </div>
+                <div class="header-item"> Gregory Croisdale <br> gcroisda <br> gcroisda@vols.utk.edu </div>
                 <div class="header-item"> <h2>Toroidal Embedding Algorithms</h1> Math&nbsp;499: Graph&nbsp;Theory Project&nbsp;1 </div>
                 <div class="header-item"> <br> April 8, 2021 </div>
             </div>
@@ -65,8 +65,15 @@
                         <figcaption><h3>Figure 2: Converting a Plane to a Torus</h3></figcaption>
                     </figure>
                     &emsp; Figure 2 shows the standard mapping from a Plane to a Torus; edges which reach one side of the plane, they must wrap around on the opposing side.
-                    This is remenescent of early Arcade games such as Pacman. While this manipulation does not preserve distances as shown by the warping of the lines in Figure 2,
-                    it is a valid manipulation for our purposes as it preserves the properties of intersection and paralellism which characterize a graph embedding.
+                    This is reminiscent of early Arcade games such as Pacman. While this manipulation does not preserve distances as shown by the warping of the lines in Figure 2,
+                    it is a valid manipulation for our purposes as it preserves the properties of intersection and parallelism which characterize a graph embedding.
+                    <br><br>
+                    &emsp; It is important to note that while <a class="k33">$K_{3,3}$</a> and <a class="k5">$K_5$</a> are <a class="planar">non-planar</a>, they can be embedded on
+                    a torus.
+                    <figure style="margin: auto; width: calc(262px * 1);">
+                        <image src="resources/images/graphs/k5_tor.svg" style="width: 256px; border: 1px solid black;"></image>
+                        <figcaption><h3>Figure 3: $k_5$ Embedded on a Torus</h3></figcaption>
+                    </figure>
                 </section>
                 <section>
                     <h3>1c) Toroidal Graphs <a href="#ref2">[2: pg 1]</a></h3>
@@ -80,31 +87,117 @@
             <section>
                 <h2>2. Embedding Algorithms</h2>
                 <section>
-                    <h3>2a) Planar Embedding Algorithms</h3>
+                    <h3>2a) Planar Embedding Algorithms <a href="#ref4">[4]</a></h3>
                     &emsp; Determining if a given graph is <a class="planar">planar</a> can be accomplished (relatively) easily and quickly. To find a subgraph isomorphic to a subdivision of a graph $K$
                     inside of a graph $G$ takes less than $c_1 * |V| + c_2 * |E|$ seconds for some $c_1, c_2$ where $V, E$ are the sets of edges and vertices in $G$. Because this is enough
                     to determine if a graph is <a class="planar">planar</a>, we refer to the use of <a class="kurT">Kuratowski's Theorem</a> to determine <a class="planar">planarity</a> as "linear-time" algorithm.
                     In terms of algorithmic time efficiency, this is the best-case scenario for an input of variable size.
                     <br><br>
-                    &emsp; However, what we seek is not a <a class="planar">planarity</a> test, but an actual embedding. 
+                    &emsp; However, what we seek is not a <a class="planar">planarity</a> test, but an actual embedding. There are a few different linear-time <a class="planar">planar</a> embedding algorithms, but the length of such algorithms
+                    far outweigh that which is appropriate for this report. For an example of a special-case <a class="planar">planar</a> embedding algorithm, refer to <a href="#ref4">ref [4]</a> for an algorithm which embeds graphs which
+                    consist solely of triangular regions.
                     <br><br>
                     <section>
-                        <h3>2b) Toroidal Embedding Algorithms</h3>
-                        &emsp; The existence of a linear-time embeddding algorithm relies on the finite set of forbidden minors (<a class="k5">$K_5$</a> and <a class="k33">$K_{3,3}$</a>), but remember that 
-                        <a class="tor">toroidal graphs</a> have no such finite set. This means that we cannot use the same method 
+                        <h3>2b) Toroidal Embedding Algorithms<a href="#ref4">[1: pg 25]</a></h3>
+                        &emsp; The existence of a linear-time embedding algorithm relies on the finite set of forbidden minors (<a class="k5">$K_5$</a> and <a class="k33">$K_{3,3}$</a>), but remember that 
+                        <a class="tor">toroidal graphs</a> have no such finite set. This means that we cannot use the same method for determining <a class="tor">toroidity</a> or a <a class="tor">toroidal embedding</a>.
                         <br><br>
-                        &emsp; Most toroidal embedding algorithms follow the following steps:
+                        &emsp; Below is an algorithm entitled "TorusEmbedBridgeEnumerative":
                         <ol>
                             <li>
                                 Check if $G$ is <a class="planar">planar</a>
                                 <br>
-                                &emsp;If so, $G$ is <a class="tor">toroidal</a> and its planar embedding is also a toroidal embedding. Done.
+                                &emsp;If so, $G$ is <a class="tor">toroidal</a> and its planar embedding is also a toroidal embedding. Done!
                                 <br>
                                 &emsp;If not, by <a class="kurT">Kuratowski's Theorem</a>, there must be some subgraph isomorphic to a subdivision of <a class="k5">$K_5$</a> and <a class="k33">$K_{3,3}$</a>.
+                                We will call this subgraph $K$.
+                            </li>
+                            <li>
+                                Now, we must find all of the <a class="bridge">bridges</a> in $G - E_K$ where $E_K$ contains all of $K$'s edges. Let's store them in a set called $B$.
+                            </li>
+                            <li>
+                                Do the following for each <a class="distinct">distinct toroidal embedding</a> $\Pi$ of $K$:
+                                <ol>
+                                    <li>
+                                        Find all of the <a class="region">regions</a> (represented by their bounding cycles) of $\Pi$ and store in set $R$.
+                                    </li>
+                                    <li>
+                                        For every possible connection between all <a class="bridge">bridges</a> in $B$ and <a class="region">regions</a> in $R$ where <a class="bridge">bridge</a> $b$ can separate <a class="region">region</a> $r$,
+                                    </li>
+                                    <ol>
+                                        <li>
+                                            Check if all faces are <a class="planar">planar</a>
+                                            <br>&emsp; If so, return current embedding. Done!
+                                        </li>
+                                    </ol>
+                                </ol>
+                            </li>
+                            <li>
+                                If this point has been reached, there is no Toroidal embedding of $G$.
                             </li>
                         </ol>
+                        <br><br>
                     </section>
                 </section>
+                Now, let's try an example with $K_6$ as $G$.
+                <br><br>
+                <figure style="margin: auto; width: calc(262px * 1);">
+                    <image src="resources/images/graphs/k6_1.svg" style="width: 256px; border: 1px solid black;"></image>
+                    <figcaption><h3>$K_6$</h3></figcaption>
+                </figure>
+                First, we need to determine if $G$ is <a class="planar">planar</a>. Using the aforementioned linear-time planarity algorithm, we find the following subgroup $K_5$ (later to be 
+                referred to as $K$) indicated by the red vertices:
+                <figure style="margin: auto; width: calc(262px * 1);">
+                    <image src="resources/images/graphs/k6_2.svg" style="width: 256px; border: 1px solid black;"></image>
+                    <figcaption><h3>$K_6$ with $K_5$ highlighted</h3></figcaption>
+                </figure>
+                Now, we need to find the <a class="bridge">bridges</a> in $G$ if we take away all the edges in subgraph $K$.
+                <figure style="margin: auto; width: calc(262px * 1);">
+                    <image src="resources/images/graphs/k6_3.svg" style="width: 256px; border: 1px solid black;"></image>
+                    <figcaption><h3>$K_6$ with set $B$ in black</h3></figcaption>
+                </figure>
+                Next, we need to choose a toroidal embedding $\Pi$ of the subgraph $K$.
+                <figure style="margin: auto; width: calc(262px * 1);">
+                    <image src="resources/images/graphs/k6_4.svg" style="width: 256px; border: 1px solid black;"></image>
+                    <figcaption><h3>$K_5$ embedded onto a torus</h3></figcaption>
+                </figure>
+                To continue, we need to separate each <a class="region">region</a> $r$ using each eligible <a class="bridge">bridge</a> $b \in B$.
+                <figure style="margin: auto; width: calc(262px * 1);">
+                    <image src="resources/images/graphs/k6_5.svg" style="width: 256px; border: 1px solid black;"></image>
+                    <figcaption><h3>$K_5$ embedded onto a torus with regions labeled</h3></figcaption>
+                </figure>
+                Let's try placing the extra vertex and separating <a class="region">region</a> $r_i$ for each <a class="bridge">bridge</a> $b_u$.
+                <figure style="margin: auto; width: calc(262px * 1);">
+                    <image src="resources/images/graphs/k6_6.svg" style="width: 256px; border: 1px solid black;"></image>
+                    <figcaption><h3>$G$ embedded(?) onto a torus</h3></figcaption>
+                </figure>
+                This is obviously not toroidal, as there are many intersections (and there is nowhere we can easily put the new vertex).
+                This time, let's place the vertex in the center and segment <a class="region">region</a> $5$ with each <a class="bridge">bridge</a>.
+                <figure style="margin: auto; width: calc(262px * 1);">
+                    <image src="resources/images/graphs/k6_7.svg" style="width: 256px; border: 1px solid black;"></image>
+                    <figcaption><h3>$G$ embedded(?) onto a torus</h3></figcaption>
+                </figure>
+                It looks like we got it on the second try!
+                <br><br>
+                <hr>
+                <br>This convenient guessing made the algorithm terminate rather quickly, but the worst case scenario for this method requires going through
+                every single possible embedding of $K_5$ and every possible permutation of $b \rightarrow r$ mappings.
+                <br><br> There can be significant speed-ups using two potential methods: better region intersection selection and memoization.
+                <ul>
+                    <li><b>Region selection</b>:
+                        <br>
+                        &emsp;If we were only to select regions which would allow us to place the added vertices into a single region (and not in-between several as
+                        in our first example), there would be a significant reduction in the number of cases required to try.
+                    </li>
+                    <li><b>Memoization</b>:
+                        <br>
+                        &emsp;Despite the infinite number of forbidden minors for a toroidal graph, there can only be finitely many for a graph of a set size. The quickest
+                        algorithms for most toroidal graphs rely on this fact and check graphs of reasonable size and order for forbidden minors. This is not, however,
+                        an exhaustive solution, so many efficient programs rely on a method resembling the aforementioned algorithm in a case where the size of a graph is
+                        too large. If the graph is not toroidal but did not have any of the forbidden minors, it can be added to the set of forbidden minors. For most
+                        applications, this approach will be the most approachable and efficient.
+                    </li>
+                </ul> 
 
             </section>
             <section>

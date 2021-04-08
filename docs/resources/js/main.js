@@ -55,4 +55,34 @@ function main() {
         placement: "bottom",
     },
     );
+    tippy('.bridge', {
+        content: 'An edge $e$ is a bridge <i>if and only if</i> $G-e$ increases the number of components in the graph. If $G$ is connected, $G-e$ must be disconnected.',
+        allowHTML: true,
+        placement: "bottom",
+        onShown(instance) {
+            if (!rendered.has(instance.id)) {
+                MathJax.typeset($("#" + instance.popper.id));
+                rendered.add(instance.id);
+            }
+        },
+    },
+    );
+    tippy('.region', {
+        content: 'An area of an embedding which is bounded by edges and cannot be subdivided.',
+        allowHTML: true,
+        placement: "bottom",
+    },
+    );
+    tippy('.distinct', {
+        content: 'Two embeddings are distinct if they cannot be trivially transformed into each other. For example, there are 231 unlabelled distinct embeddings for $K_5$ onto a torus.',
+        allowHTML: true,
+        placement: "bottom",
+        onShown(instance) {
+            if (!rendered.has(instance.id)) {
+                MathJax.typeset($("#" + instance.popper.id));
+                rendered.add(instance.id);
+            }
+        },
+    },
+    );
 }
