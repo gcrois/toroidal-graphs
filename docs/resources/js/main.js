@@ -8,7 +8,7 @@ function main() {
     },
     );
     tippy('.planar', {
-        content: 'A graph $G$ which can be drawn on a plane without any intersecting edges',
+        content: 'A graph $G$ is planar if it can be drawn on a plane without any intersecting edges',
         allowHTML: true,
         placement: "bottom",
         onShown(instance) {
@@ -20,7 +20,7 @@ function main() {
     },
     );
     tippy('.tor', {
-        content: 'A graph $G$ which can be drawn on a torus without any intersecting edges',
+        content: 'A graph $G$ is toroidal if it can be drawn on a torus without any intersecting edges',
         allowHTML: true,
         placement: "bottom",
         onShown(instance) {

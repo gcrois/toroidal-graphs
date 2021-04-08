@@ -65,7 +65,7 @@
                         <figcaption><h3>Figure 2: Converting a Plane to a Torus</h3></figcaption>
                     </figure>
                     &emsp; Figure 2 shows the standard mapping from a Plane to a Torus; edges which reach one side of the plane, they must wrap around on the opposing side.
-                    This is remenescent of early Arcade games such as Pacman. While this manipulation does not preserve distances as shown by the warped size of the lines in Figure 2,
+                    This is remenescent of early Arcade games such as Pacman. While this manipulation does not preserve distances as shown by the warping of the lines in Figure 2,
                     it is a valid manipulation for our purposes as it preserves the properties of intersection and paralellism which characterize a graph embedding.
                 </section>
                 <section>
@@ -76,49 +76,43 @@
                     </a>, no such characterization exists for a <a class="planar">Toroidal Graph</a>. In fact, at the time that reference <a href="#ref2">[2]</a> was written,
                     there were 239,451 known distinct forbidden minors for toroidal embeddings (as opposed to the planar embedding's 2).
                 </section>
-                <section>
-                    <h3>1d) Embedding Algorithm Basics</h3>
-                </section>
             </section>
             <section>
                 <h2>2. Embedding Algorithms</h2>
                 <section>
-                    <h3>2a) Enumerative Bridge Embedding</h3>
+                    <h3>2a) Planar Embedding Algorithms</h3>
+                    &emsp; Determining if a given graph is <a class="planar">planar</a> can be accomplished (relatively) easily and quickly. To find a subgraph isomorphic to a subdivision of a graph $K$
+                    inside of a graph $G$ takes less than $c_1 * |V| + c_2 * |E|$ seconds for some $c_1, c_2$ where $V, E$ are the sets of edges and vertices in $G$. Because this is enough
+                    to determine if a graph is <a class="planar">planar</a>, we refer to the use of <a class="kurT">Kuratowski's Theorem</a> to determine <a class="planar">planarity</a> as "linear-time" algorithm.
+                    In terms of algorithmic time efficiency, this is the best-case scenario for an input of variable size.
+                    <br><br>
+                    &emsp; However, what we seek is not a <a class="planar">planarity</a> test, but an actual embedding. 
+                    <br><br>
+                    <section>
+                        <h3>2b) Toroidal Embedding Algorithms</h3>
+                        &emsp; The existence of a linear-time embeddding algorithm relies on the finite set of forbidden minors (<a class="k5">$K_5$</a> and <a class="k33">$K_{3,3}$</a>), but remember that 
+                        <a class="tor">toroidal graphs</a> have no such finite set. This means that we cannot use the same method 
+                        <br><br>
+                        &emsp; Most toroidal embedding algorithms follow the following steps:
+                        <ol>
+                            <li>
+                                Check if $G$ is <a class="planar">planar</a>
+                                <br>
+                                &emsp;If so, $G$ is <a class="tor">toroidal</a> and its planar embedding is also a toroidal embedding. Done.
+                                <br>
+                                &emsp;If not, by <a class="kurT">Kuratowski's Theorem</a>, there must be some subgraph isomorphic to a subdivision of <a class="k5">$K_5$</a> and <a class="k33">$K_{3,3}$</a>.
+                            </li>
+                        </ol>
+                    </section>
                 </section>
-                <section>
-                    <h3>2b) Recursive Bridge Assignment</h3>
-                </section>
-                <section>
-                    <h3>2c) Recursive Bridge Attachment</h3>
-                </section>
-                <section>
-                    <h3>2d) Path Based Embedding Algorithm</h3>
-                </section>
-            </section>
-            <section>
-                <h2>3. Embedding Algorithms</h2>
-                <section>
-                    <h3>2a) Enumerative Bridge Embedding</h3>
-                </section>
-                <section>
-                    <h3>2b) Recursive Bridge Assignment</h3>
-                </section>
-                <section>
-                    <h3>2c) Recursive Bridge Attachment</h3>
-                </section>
-                <section>
-                    <h3>2d) Path Based Embedding Algorithm</h3>
-                </section>
-            </section>
-            <section>
-                <h2>3. Demo</h2>
-                I really hope I get to this :,(
+
             </section>
             <section>
                 <h2>4. References</h2>
                 <a id="ref1" href="http://summit.sfu.ca/system/files/iritems1/14219/etd8431_JYu.pdf">[1] A Practical Torus Embedding Algorithm and Its Implementation</a><br>
                 <a id="ref2" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.132.2586&rep=rep1&type=pdf">[2] A Simpler and Faster Torus Embedding Algorithm</a><br>
                 <a id="ref3" href="https://www.amazon.com/Introductory-Graph-Theory-Dover-Mathematics/dp/0486247759">[3] Introductory Graph Theory by Gary Chartland</a><br>
+                <a id="ref4" href="https://www.ics.uci.edu/~eppstein/gina/schnyder/">[4] Walter Schnyder's Grid-Embedding Algorithm</a><br>
 
                 <br>
                 All visuals were created for this project in either <a href="https://inkscape.org/">Inkscape</a> or <a href="https://www.blender.org/">Blender</a>.
